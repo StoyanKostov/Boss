@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootswatch/spacelab/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    @RenderSection("scripts", false)
+</head>
+<body>
+    <header id="main">
+        <div id="header-content-wrapper" class="wrapper float-clear">
+            <div id="logo">
+                <a href="#">
+                    <h1>BossCompany</h1>
+                </a>
+            </div>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input class="form-control" placeholder="User name" type="text">
+                            <input class="form-control" placeholder="Password" type="password">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a asp-controller="App" asp-action="Register">Register</a>
+                        </li>
+                        <li>
+                            <a asp-controller="App" asp-action="Logoff">Logoff</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

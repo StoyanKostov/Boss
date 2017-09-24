@@ -1,0 +1,6 @@
+# dependencies
+/WebApplication/node_modules
+/node_modules
+/WebApplication/wwwroot/lib
+
+.vscode

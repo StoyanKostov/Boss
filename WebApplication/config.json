@@ -1,0 +1,6 @@
+﻿{
+  "ToAddress": "me@gmail.com",
+  "Data": {
+    "SQLserver":  "Server=(localdb)\\MSSQLLocalDB;Database=AppDB;Trusted_Connection=true;MultipleActiveResultSets=true;"
+  }
+}

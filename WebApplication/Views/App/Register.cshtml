@@ -1,0 +1,50 @@
+@model WebApplication.ViewModels.UserViewModel
+
+@section scripts {
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="~/app/src/app.js"></script>
+}
+<div class="col-md-3 col-md-offset-3" ng-app="bossApp" ng-controller="userController">
+        <span class="btn btn-success" ng-show="success">{{success}}</span>
+        <form method="post" name="registration" ng-submit="userAdd(user)">
+            <div class="form-group">
+                <label for="userName">User name: </label>
+                <input ng-model="user.userName" name="userName" class="form-control" type="text" ng-minlength="5" required/>
+                <span class="alert-warning" ng-show="registration.firstName.$error.required">*</span>
+                <span class="alert-warning" ng-show="registration.firstName.$error.minlength">min length 5</span>
+            </div>
+            <div class="form-group">
+                <label for="firstName">First name: </label>
+                <input ng-model="user.firstName" name="firstName" class="form-control" type="text" required/>
+                <span class="alert-warning" ng-show="registration.firstName.$error.required">*</span>
+                <span class="alert-warning" ng-show="registration.firstName.$error.minlength">min length 5</span>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last name: </label>
+                <input ng-model="user.lastName" name="lastName" class="form-control" type="text" required/>
+                <span class="alert-warning" ng-show="registration.firstName.$error.required">*</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Enter your email: </label>
+                <input ng-model="user.email" name="email" class="form-control" type="email" required/>
+                <span class="alert-warning" ng-show="registration.firstName.$error.required">*</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Type your password: </label>
+                <input ng-model="user.password" name="password" class="form-control" type="password" ng-minlength="6" required />
+                <span class="alert-warning" ng-show="registration.firstName.$error.required">*</span>
+                <span class="alert-warning" ng-show="registration.firstName.$error.minlength">min length 6</span>
+                <span class="alert-warning" ng-show="error">{{error}}</span>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm your password: </label>
+                <input ng-model="user.confirmPassword" name="confirmPassword" class="form-control" type="password" ng-minlength="6" required />
+                <span class="alert-warning" ng-show="registration.firstName.$error.minlength">min length 6</span>
+                <span class="alert-warning" ng-show="registration.firstName.$error.required">*</span>
+            </div>
+            <div>
+                <input class="btn" type="submit" value="Send" ng-disabled="registration.$invalid" />
+            </div>
+        </form>
+</div>  
